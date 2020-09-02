@@ -1,0 +1,144 @@
+,COMPANY,TICKER,GROUP,P/E,LAST CLOSE,VOLUME,MARKET SECTOR,MACD
+0,11 bit studios SA,11B,sWIG80,37.4,505.0,6902.0,Gry video,No Signal
+1,4Fun Media SA,4FM,other,13.2,4.51,55.0,Media,No Signal
+2,AB SA,ABE,sWIG80,8.5,33.1,4541.0,Handel hurtowy,No Signal
+3,AC SA,ACG,sWIG80,12.1,42.0,90.0,Motoryzacja,No Signal
+4,Action SA w restrukturyzacji,ACT,other,10.5,5.28,15204.0,Handel hurtowy,No Signal
+5,Adiuvo Investments SA,ADV,other,2.95,6.44,30889.0,Ochrona zdrowia,No Signal
+6,Agora SA,AGO,sWIG80,105.4,7.18,1908.0,Media,No Signal
+7,Ailleron SA,ALL,other,121.3,6.6,107001.0,Informatyka,No Signal
+8,Alior Bank SA,ALR,WIG20,8.7,14.0,637831.0,Banki,No Signal
+9,All In! Games SA,ALG,other,28.1,24.6,9744.0,Finanse pozostałe,No Signal
+10,Altus Towarzystwo Funduszy Inwestycyjnych SA,ALI,sWIG80,30.9,1.145,44457.0,Rynek kapitałowy,No Signal
+11,Alumetal SA,AML,sWIG80,12.0,36.7,353.0,Hutnictwo,No Signal
+12,AMICA Wronki SA,AMC,mWIG40,10.4,150.6,22443.0,Wyposażenie domu,No Signal
+13,AmRest Holdings SE,EAT,other,50.6,20.05,170761.0,Rekreacja i wypoczynek,No Signal
+14,Apator SA,APT,mWIG40,12.3,20.7,2849.0,Elektromaszynowy,No Signal
+15,APS Energia SA,APE,other,9.5,2.28,7650.0,Elektromaszynowy,No Signal
+16,Archicom SA,ARH,other,3.9,18.65,160.0,Nieruchomości,No Signal
+17,Artifex Mundi SA,ART,other,26.3,9.4,6259.0,Gry video,No Signal
+18,ASBISc Enterprises PLC,ASB,sWIG80,4.4,5.09,60991.0,Handel hurtowy,No Signal
+19,Astarta Holding NV,AST,sWIG80,54.4,16.4,4326.0,Produkcja żywności,No Signal
+20,Atal SA,1AT,sWIG80,14.5,33.9,1607.0,Nieruchomości,No Signal
+21,Atende SA,ATD,other,13.1,3.28,1806.0,Informatyka,No Signal
+22,Atlas Estates Limited,ATL,other,0.4,1.25,1.0,Nieruchomości,Signal Confirmed
+23,ATM Grupa SA,ATG,other,14.2,4.59,1826.0,Media,No Signal
+24,Auto Partner SA,APR,sWIG80,16.5,7.06,2254.0,Motoryzacja,No Signal
+25,Banco Santander SA,SAN,other,6.7,8.029,32641.0,Banki,No Signal
+26,Bank Handlowy w Warszawie SA,BHW,mWIG40,10.4,35.5,12377.0,Banki,No Signal
+27,Bank Millennium SA,MIL,mWIG40,11.9,2.92,926521.0,Banki,No Signal
+28,Bank Ochrony Środowiska SA,BOS,sWIG80,8.4,6.14,3765.0,Banki,No Signal
+29,Bank Polska Kasa Opieki SA,PEO,WIG20,7.4,53.1,560815.0,Banki,No Signal
+30,Benefit Systems SA,BFT,mWIG40,237.0,863.0,644.0,Rekreacja i wypoczynek,Signal Confirmed
+31,Betacom SA,BCM,other,18.2,10.3,1645.0,Informatyka,No Signal
+32,Biomed-Lublin Wytwórnia Surowic i Szczepionek SA,BML,other,350.3,19.25,4354904.0,Ochrona zdrowia,No Signal
+33,Bioton SA,BIO,sWIG80,4.7,4.85,81544.0,Ochrona zdrowia,No Signal
+34,BNP Paribas Bank Polska SA,BNP,other,12.2,47.0,5854.0,Banki,No Signal
+35,BoomBit SA,BBT,other,15.3,19.1,4931.0,Gry video,No Signal
+36,Boryszew SA,BRS,mWIG40,25.5,3.495,44080.0,Hutnictwo,No Signal
+37,British Automotive Holding SA,BAH,other,6.8,0.7,64666.0,Motoryzacja,No Signal
+38,Budimex SA,BDX,mWIG40,27.3,234.5,6632.0,Budownictwo,No Signal
+39,Bumech SA,BMC,sWIG80,13.5,2.16,4525.0,Elektromaszynowy,No Signal
+40,Capital Partners SA,CPA,other,8.4,1.15,7149.0,Finanse pozostałe,No Signal
+41,CCC SA,CCC,WIG20,103.23,57.22,127482.0,Odzież i kosmetyki,No Signal
+42,CD Projekt SA,CDR,mWIG40,157.6,409.2,178876.0,Gry video,No Signal
+43,CDRL SA,CDL,other,6.1,12.7,1089.0,Odzież i kosmetyki,No Signal
+44,Celon Pharma SA,CLN,sWIG80,132.7,43.8,28059.0,Ochrona zdrowia,No Signal
+45,Centrum Nowoczesnych Technologii SA,CNT,other,6.4,14.2,594.0,Budownictwo,No Signal
+46,CEZ a.s.,CEZ,other,15.9,77.2,295.0,Energia,No Signal
+47,CFI Holding SA,CFI,sWIG80,22.0,0.31,44210.0,Rekreacja i wypoczynek,No Signal
+48,CI Games SA,CIG,mWIG40,420.4,1.49,1388435.0,Gry video,No Signal
+49,Ciech SA,CIE,mWIG40,16.8,30.5,38079.0,Chemia,No Signal
+50,Coal Energy SA,CLE,other,0.2,0.67,164749.0,Górnictwo,No Signal
+51,Cognor Holding SA,COG,other,9.1,1.325,85192.0,Hutnictwo,No Signal
+52,Comarch SA,CMR,mWIG40,16.3,225.0,1610.0,Informatyka,No Signal
+53,Cyfrowy Polsat SA,CPS,WIG20,18.5,28.7,257826.0,Telekomunikacja,No Signal
+54,DataWalk SA,DAT,other,91.8,204.0,2388.0,Informatyka,No Signal
+55,Delko SA,DEL,other,7.1,20.2,3839.0,Handel hurtowy,No Signal
+56,Develia SA,DVL,sWIG80,11.5,1.89,1208780.0,Nieruchomości,No Signal
+57,DGA SA,DGA,other,3.3191,4.96,15.0,Usługi dla przedsiębiorstw,No Signal
+58,Eko Export SA,EEX,sWIG80,23.0,5.26,69468.0,Recykling,No Signal
+59,Elektrobudowa SA w upadłości,ELB,sWIG80,2.4,1.57,5850.0,Budownictwo,No Signal
+60,Elemental Holding SA,EMT,sWIG80,21.7,2.08,227758.0,Recykling,No Signal
+61,ELKOP SE,EKP,other,1.7,0.327,147524.0,Nieruchomości,No Signal
+62,Enea SA,ENA,mWIG40,4.6,6.5,285729.0,Energia,No Signal
+63,Energa SA,ENG,WIG20,7.5,7.72,44162.0,Energia,No Signal
+64,Enter Air SA,ENT,sWIG80,25.8,25.0,9407.0,Transport,No Signal
+65,Erbud SA,ERB,other,7.9,19.4,177.0,Budownictwo,No Signal
+66,ERG SA,ERG,other,25.9,48.0,205.0,Tworzywa i guma,No Signal
+67,Esotiq & Henderson SA,EAH,other,4.0,9.04,568.0,Odzież i kosmetyki,No Signal
+68,Eurocash SA,EUR,WIG20,46.6,16.12,256656.0,Sieci handlowe,No Signal
+69,Europejskie Centrum Odszkodowań SA,EUC,other,3.5,4.23,20118.0,Ubezpieczenia,No Signal
+70,Eurotel SA,ETL,other,5.4,19.45,216.0,Sieci handlowe,No Signal
+71,Everest Investments SA,EVE,other,82.7,28.0,1822.0,Finanse pozostałe,No Signal
+72,Fabryka Farb i Lakierów Śnieżka SA,SKA,sWIG80,19.8,93.8,110.0,Budownictwo,No Signal
+73,Fabryka Sprzętu i Narzędzi Górniczych Fasing SA,FSG,other,4.5,11.3,439.0,Elektromaszynowy,No Signal
+74,Famur SA,FMF,sWIG80,4.4,1.794,343529.0,Elektromaszynowy,No Signal
+75,Fenghua SoleTech AG,FGT,other,2.0,17.52,10.0,Zaopatrzenie przedsiębiorstw,No Signal
+76,Firma Oponiarska Dębica SA,DBC,sWIG80,14.4,80.0,835.0,Motoryzacja,No Signal
+77,Fon SE,FON,other,93.3,0.142,8686.0,Finanse pozostałe,No Signal
+78,Getin Holding SA,GTN,sWIG80,2.1,0.94,938983.0,Banki,No Signal
+79,Getin Noble Bank SA,GNB,mWIG40,30.5,0.2295,205163.0,Banki,No Signal
+80,Giełda Papierów Wartościowych w Warszawie SA,GPW,mWIG40,14.7,43.75,30194.0,Rynek kapitałowy,No Signal
+81,Global Cosmed SA,GLC,other,89.2,7.3,53498.0,Odzież i kosmetyki,No Signal
+82,Globe Trade Centre SA,GTC,mWIG40,12.5,6.38,22090.0,Nieruchomości,No Signal
+83,Groclin SA,GCN,sWIG80,280.91,1.21,4162.0,Motoryzacja,No Signal
+84,Grodno SA,GRN,other,16.1,17.05,64219.0,Zaopatrzenie przedsiębiorstw,No Signal
+85,Grupa Azoty SA,ATT,mWIG40,10.2,26.7,15088.0,Chemia,No Signal
+86,Grupa Azoty Zakłady Azotowe Puławy SA,ZAP,other,6.5,84.2,341.0,Chemia,No Signal
+87,Grupa Kapitałowa Immobile SA,GKI,other,76.0,2.53,2501.0,Finanse pozostałe,No Signal
+88,Grupa Lotos SA,LTS,WIG20,9.3,41.7,526690.0,Paliwa,No Signal
+89,Grupa Żywiec SA,ZWC,other,26.2,476.0,37.0,Produkcja żywności,No Signal
+90,Harper Hygienics SA,HRP,other,129.9,20.1,172951.0,Odzież i kosmetyki,No Signal
+91,Helio SA,HEL,other,17.7,11.6,1.0,Produkcja żywności,No Signal
+92,Herkules SA,HRS,other,13.6,1.44,82300.0,Budownictwo,Signal Confirmed
+93,Idea Bank SA,IDA,sWIG80,3.1,1.8719999999999999,188639.0,Banki,No Signal
+94,IFIRMA SA,IFI,other,12.9,4.27,1776.0,Informatyka,No Signal
+95,IMC SA,IMC,other,60.1,11.0,8256.0,Produkcja żywności,No Signal
+96,IMS SA,IMS,other,11.2,3.07,17896.0,Media,No Signal
+97,INC SA,INC,other,37.6,14.25,50932.0,Finanse pozostałe,No Signal
+98,ING Bank Śląski SA,ING,mWIG40,12.5,139.0,817.0,Banki,No Signal
+99,Instal Kraków SA,INK,other,5.0,20.1,1740.0,Budownictwo,No Signal
+100,Inter Cars SA,CAR,mWIG40,15.0,215.0,5988.0,Motoryzacja,No Signal
+101,Inter Rao Lietuva AB,IRL,other,4.8,14.5,6180.0,Energia,Signal Confirmed
+102,Intersport Polska SA,IPO,other,45.2,1.39,890.0,Odzież i kosmetyki,No Signal
+103,Izostal SA,IZS,other,6.4,2.49,6416.0,Elektromaszynowy,No Signal
+104,J.W. Construction Holding SA,JWC,other,4.8,2.8,833.0,Nieruchomości,No Signal
+105,Jastrzębska Spółka Węglowa SA,JSW,WIG20,127.6,15.32,636378.0,Górnictwo,No Signal
+106,JWW Invest SA,JWW,other,9.3,3.3,323.0,Elektromaszynowy,No Signal
+107,Kernel Holding SA,KER,mWIG40,11.7,38.75,8383.0,Produkcja żywności,No Signal
+108,KGHM Polska Miedź SA,KGH,WIG20,23.2,133.85,470217.0,Górnictwo,No Signal
+109,Korporacja Gospodarcza Efekt SA,EFK,other,0.9,5.05,671.0,Usługi dla przedsiębiorstw,No Signal
+110,Kruk SA,KRU,mWIG40,21.2,129.9,16159.0,Finanse pozostałe,No Signal
+111,Krynica Vitamin SA,KVT,other,10.4,5.98,33003.0,Produkcja żywności,No Signal
+112,Krynicki Recykling SA,KRC,other,15.0,7.8,102.0,Recykling,No Signal
+113,Labo Print SA,LAB,other,20.1,9.76,2.0,Usługi dla przedsiębiorstw,No Signal
+114,Larq SA,LRQ,other,3.4,2.22,3615.0,Media,No Signal
+115,Lentex SA,LTX,sWIG80,58.0,9.9,18720.0,Budownictwo,No Signal
+116,Libet SA,LBT,other,17.3,2.05,392500.0,Budownictwo,Signal Confirmed
+117,LiveChat Software SA,LVC,sWIG80,32.0,94.6,16353.0,Informatyka,No Signal
+118,LPP SA,LPP,WIG20,98.8,7245.0,3108.0,Odzież i kosmetyki,No Signal
+119,LUBAWA SA,LBW,other,7.3,1.42,397425.0,Odzież i kosmetyki,No Signal
+120,Lubelski Węgiel Bogdanka SA,LWB,mWIG40,2.7,18.2,33144.0,Górnictwo,No Signal
+121,Mabion SA,MAB,sWIG80,162.3,26.7,19609.0,Ochrona zdrowia,No Signal
+122,Mangata Holding SA,MGT,sWIG80,7.1,49.4,181.0,Elektromaszynowy,No Signal
+123,Master Pharm SA,MPH,other,8.3,4.78,335.0,Ochrona zdrowia,No Signal
+124,Maxcom SA,MXC,other,19.0,14.0,3921.0,Wyposażenie domu,No Signal
+125,mBank SA,MBK,WIG20,12.5,192.3,23296.0,Banki,No Signal
+126,MCI Capital SA,MCI,sWIG80,6.3,11.75,774.0,Finanse pozostałe,No Signal
+127,MDI Energia SA,MDI,other,413.8,4.55,26672.0,Budownictwo,No Signal
+128,Medicalgorithmics SA,MDG,mWIG40,21.2,24.35,19665.0,Ochrona zdrowia,No Signal
+129,Mercator Medical SA,MRC,other,156.1,333.0,27716.0,Ochrona zdrowia,No Signal
+130,Mex Polska SA,MEX,other,13.1,1.48,3747.0,Rekreacja i wypoczynek,No Signal
+131,MFO SA,MFO,other,5.4,21.0,979.0,Budownictwo,No Signal
+132,Miraculum SA,MIR,other,13.2,1.29,6634.0,Odzież i kosmetyki,No Signal
+133,ML System SA,MLS,other,125.8,87.6,9640.0,Energia,No Signal
+134,MOL Magyar Olaj - és Gázipari Részvénytársaság,MOL,other,217.6,22.7,303.0,Paliwa,Signal Confirmed
+135,Monnari Trade SA,MON,sWIG80,9.1,1.96,4458.0,Odzież i kosmetyki,No Signal
+136,MOSTOSTAL Płock SA,MSP,other,4.3,9.0,434.0,Budownictwo,Signal Confirmed
+137,Mostostal Zabrze SA,MSZ,sWIG80,6.0,0.82,58365.0,Budownictwo,No Signal
+138,Neuca SA,NEU,mWIG40,16.9,508.0,1710.0,Ochrona zdrowia,No Signal
+139,Novaturas AB,NTU,other,9.1,7.85,398.0,Rekreacja i wypoczynek,No Signal
+140,NOVITA SA,NVT,other,15.1,99.6,272.0,Zaopatrzenie przedsiębiorstw,No Signal
+141,NTT System SA,NTT,other,8.2,2.94,3768.0,Informatyka,No Signal
+142,Odlewnie Polskie SA,ODL,other,6.1,4.98,18701.0,Hutnictwo,No Signal
