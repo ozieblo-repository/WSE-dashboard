@@ -38,6 +38,6 @@ print('check after normalization - MEAN VALUE (properly should be near null): ',
 # Plot of distribution:
 plt.plot(norm_movements)
 plt.suptitle("Daily price movements of companies:", fontsize=12)
-plt.title("(the result of subtracting the opening price logarithm and the closing price logarithm)", fontsize=8)
+plt.title("(the result of subtracting the opening price logarithm and the closing price logarithm, normalized)", fontsize=8)
 plt.gca().legend(abbreviations_of_companies)
 plt.show()

@@ -50,7 +50,7 @@ class KMeansClustering:
         # on a given day):
         norm_movements[np.isnan(norm_movements)] = 0
 
-        kmeans = KMeans(n_clusters = 24,
+        kmeans = KMeans(n_clusters = 38,
                         max_iter = 1000)
 
         condition = False

@@ -3,7 +3,7 @@ import pandas as pd
 
 import os
 
-HOME_DIR = os.chdir('/Users/michalozieblo/Desktop/WSE-dashboard-01092020/wse-dash')
+#HOME_DIR = os.chdir('/Users/michalozieblo/Desktop/WSE-demo/WSE-demo/wse-dash')
 HOME_DIR = os.getcwd()
 
 import sys

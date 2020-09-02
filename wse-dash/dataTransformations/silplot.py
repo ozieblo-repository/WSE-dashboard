@@ -70,7 +70,7 @@ class SilhouettePlot:
                                         labels,
                                         metric='euclidean'))
 
-        x = range(1, 30)
+        x = range(1, 50)
 
         fig = plt.figure(figsize=(8,6))
         plt.plot(x,

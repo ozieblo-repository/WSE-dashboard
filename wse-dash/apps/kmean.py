@@ -7,7 +7,6 @@ import os
 from assets.navbar import Navbar
 
 HOME_DIR = os.getcwd()
-KMEAN_CLUSTERING_REPORT = pd.read_csv(f'{HOME_DIR}/databases/kmean_report.csv', sep=',', index_col = 0)
 
 navbar = Navbar()
 
@@ -19,12 +18,12 @@ layout = html.Div([navbar,
                                                     html.P(),
                                                     html.H2("Description"),
                                                     html.P("""\
-                                                        Donec id elit non mi porta gravida at eget metus.Fusce dapibus, tellus ac cursus
-                                                        commodo, tortor mauris condimentumnibh, ut fermentum massa justo sit amet risus
-                                                        . Etiam porta semmalesuada magna mollis euismod. Donec sed odio dui. Donec id
-                                                        elit nonmi porta gravida at eget metus. Fusce dapibus, tellus ac cursuscommodo,
-                                                        tortor mauris condimentum nibh, ut fermentum massa justo sitamet risus. Etiam
-                                                        porta sem malesuada magna mollis euismod. Donec sedodio dui.
+                                                        K-means is an efficient clustering method used to group similar 
+                                                        data into divisions based on initial centroids of clusters. 
+                                                        The clustering was performed on the basis of stock price 
+                                                        movement data, which were logarithm and then normalized in 
+                                                        a range between -1 and 1. The K value was specified with the
+                                                        Silhouette method.
                                                             """)])]),
                                   dbc.Row([html.Div([html.Button(id='submit-button',
                                                                  children='Run clusters searching'),
@@ -34,16 +33,5 @@ layout = html.Div([navbar,
                                                                                          ])),id="collapse-clusters"),
                                ]),
                              ], justify="center", align="center", className="h-50"),
-                                  dbc.Row(dbc.Col(dash_table.DataTable(
-                                      data=KMEAN_CLUSTERING_REPORT.to_dict('records'),
-                                      columns=[{"name": c, "id": c} for c in KMEAN_CLUSTERING_REPORT.columns],
-                                      style_as_list_view=True,
-                                      style_cell={'font-size': '9px','padding': '5px', 'whiteSpace': 'normal', 'height': 'auto'},
-                                      style_header={'backgroundColor': 'white','fontWeight': 'bold'},
-                                      style_cell_conditional=[{'if': {'column_id': c},'textAlign': 'center'} for c in KMEAN_CLUSTERING_REPORT.columns])))
                        ],
                        className="mt-4")])
-
-# to do:
-# - dodac zapisywanie starych raportow do archiwum z suffixem po dacie
-# - dodac wykres silhu
