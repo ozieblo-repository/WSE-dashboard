@@ -8,6 +8,7 @@ How to use it:
 4. Follow the instruction on https://dash.plotly.com/installation to install Dash. Double check of you have dash-bootstrap-components module included.
 5. Run the index.py file by following command in the terminal: 
 python index.py
+or py -3 or python3, according to your setup.
 6. Open the dashboard in the web browser using the link: 
 http://127.0.0.1:8050/
 7. Read the further details on the About tab [homepage] and check outputs in the terminal.
