@@ -345,6 +345,8 @@ def signal_reports_homepage():
     # for every given company from abbrev_list calculate signals
     for i,j in enumerate(abbrev_list):
 
+        print("in progress: ", j)
+
         df = pd.DataFrame(data=d) # empty dataframe at the beginning of the loop to collect signal +/- signs as the result
 
         # empty dataframes at the beginning of the loop to collect dates if signal is active and other needed data to visualization
@@ -354,8 +356,6 @@ def signal_reports_homepage():
         # add the ticker
         df_buy.loc[0,'TICKER'] = [j]
         df_sell.loc[0, 'TICKER'] = [j]
-
-# MAY BE IMPROVED BY USING NUMPY ARRAYS? TO BE DISCUSSED
 
         # lower() used due to default abbreviations given in capital letters
         if so_output(j.lower())['overbought_so_fast'] != []: df.loc[0,'SO FAST'] = "+"
@@ -375,6 +375,7 @@ def signal_reports_homepage():
 
         # open file as dataframe with data about market sectors (manually created by taking data from infosfera.com site)
         tmp_df_market_sector = pd.read_csv(f'{HOME_DIR}/databases/wseDataframe.csv', sep=';')
+        print('wseDataframe.csv file created')
 
         # select only the needed row for given company
         tmp_df_market_sector = tmp_df_market_sector.loc[tmp_df_market_sector['Ticker'] == j]
@@ -416,5 +417,6 @@ def signal_reports_homepage():
         # save the results
         df_buy_to_save.to_csv(END_REPORT_BUY, encoding='utf-8')
         df_sell_to_save.to_csv(END_REPORT_SELL, encoding='utf-8')
+        print('End: report files created. Please refresh the tab if web browser.')
 
 signal_reports_homepage() # run the main function
