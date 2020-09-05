@@ -7,7 +7,7 @@ import sys
 from wsedfIntoDict import KmeanOptions
 from dict_path import dict_path_data
 
-HOME_DIR = os.chdir('/Users/michalozieblo/Desktop/wse-dash-3')
+HOME_DIR = os.chdir('/Users/michalozieblo/Desktop/WSE-demo/WSE-demo/wse-dash')
 HOME_DIR = os.getcwd()
 
 END_REPORT_BUY = f'{HOME_DIR}/databases/buy_signal.csv'
@@ -375,7 +375,6 @@ def signal_reports_homepage():
 
         # open file as dataframe with data about market sectors (manually created by taking data from infosfera.com site)
         tmp_df_market_sector = pd.read_csv(f'{HOME_DIR}/databases/wseDataframe.csv', sep=';')
-        print('wseDataframe.csv file created')
 
         # select only the needed row for given company
         tmp_df_market_sector = tmp_df_market_sector.loc[tmp_df_market_sector['Ticker'] == j]
@@ -417,6 +416,7 @@ def signal_reports_homepage():
         # save the results
         df_buy_to_save.to_csv(END_REPORT_BUY, encoding='utf-8')
         df_sell_to_save.to_csv(END_REPORT_SELL, encoding='utf-8')
-        print('End: report files created. Please refresh the tab if web browser.')
+        print('Report files updated.')
 
 signal_reports_homepage() # run the main function
+print('End: Report files updated. Please refresh the tab if web browser.')

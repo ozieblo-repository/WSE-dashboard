@@ -76,7 +76,7 @@ def run_script_onClick(n_clicks):
     if n_clicks is not None:
         print('test')
         # hashed to not raise the monitor alarm on the server during the dashboard development :)
-        os.system('python3 /Users/michalozieblo/Downloads/WSE-dashboard/wse-dash/scrapper.py')
+        os.system('python3 /Users/michalozieblo/Desktop/WSE-demo/WSE-demo/wse-dash/scrapper.py')
         # os.system(f'python3 {HOME_DIR}/dataTransformations/attention_companies.py')
         return
 
