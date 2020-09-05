@@ -23,7 +23,7 @@ layout = html.Div([navbar,
                                   dbc.Row([dbc.Col([html.P(),
                                                     html.P(
                                                         """\
-                                                        Final project for postgraduate studies Big Data Engineering at \
+                                                        The final project for postgraduate studies Big Data Engineering at \
                                                         the Warsaw School of Economics.
                                                         """, style={'color': 'red'}),
                                                     html.H3("Overview"),
@@ -37,34 +37,25 @@ layout = html.Div([navbar,
                                                     html.H3("Main goal"),
                                                     html.P(
                                                         """\
-                                                        Identify trends in equity securities prices movement \
+                                                        Identify trends in prices movement of equity securities  \
                                                         using RSI, Stochastic Oscillator, MACD and Bollinger \
                                                         Bands indicators and also an unsupervised K-mean \
                                                         clustering to market sectors to create opportunities \
                                                         for capital gains.
                                                         """),
-                                                    html.H3("Partial goals/Objectives"),
-                                                    html.Ul([html.Li("Easy download of data about WSE stocks."),
-                                                             html.Li("Visualize stocks performance to allow quick \
-                                                             analysis."),
-                                                             html.Li("Provide factors for price changes."),
-                                                             html.Li("Generate investment models based on clusters \
-                                                             detected by unsupervised learning"),
-                                                             html.Li("Monitoring of the conducted investment portfolio")]),
                                                     html.H3("How to use it?"),
                                                     html.Ol( [html.Li("Click the below button in order to download \
-                                                    recent stock data from Stooq.com website"),
-                                                              html.Li("[NOT DONE YET] Check trending companies from \
-                                                              the below newly generated table for the incoming session \
-                                                              based on technical analysis."),
+                                                              recent stock data from Stooq.com website and to run the \
+                                                              technical analysis for the given day, presented on the \
+                                                              Worth Attention Companies tab. Please kindly wait until \
+                                                              the date of the analysis will not change."),
                                                               html.Li("Check in details visualizations related with \
-                                                              each market indicator from the navigation bar menu above."),
+                                                              each market indicator from the navigation bar menu above. \
+                                                              Please click any active button to run the visualization!"),
                                                               html.Li("Check related companies based on price movements \
-                                                              via K-mean clustering from the navigation bar menu above \
-                                                              [IN PROGRESS, DONE ONLY FOR mWIG40 AT THE MOMENT]."),
-                                                              html.Li("[NOT DONE YET] Maintain your own portfolio by \
-                                                              save of your transactions data, giving you the extra \
-                                                              personalized signals.")])])]),
+                                                              via K-mean clustering from the navigation bar menu above. \
+                                                              To run it again, you need to refresh the webpage.")
+                                                              ])])]),
                                   dbc.Row([dbc.Col([
                                       html.Br(),
                                       dbc.Button("Download last stock prices and select companies worth attention",

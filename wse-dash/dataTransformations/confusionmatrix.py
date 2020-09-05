@@ -1,32 +1,31 @@
 # file is not a part of the dashboard
 # @author: Michal Ozieblo
 
-# test package included in confusion_matrix_test folder
-
 # import standard libraries
 import pandas as pd
 import os
 from datetime import datetime
 import numpy as np
 import sys
+import seaborn as sns
+sns.set_style("whitegrid")
 
+import matplotlib.pyplot as plt
 
 # import internal packages
 from wsedfIntoDict import KmeanOptions
 from dict_path import dict_path_data
 
 # set paths
-#HOME_DIR = os.chdir('/Users/michalozieblo/Desktop/wse-dash-3')
+# HOME_DIR = os.chdir('/Users/michalozieblo/Desktop/WSE-demo/WSE-demo/wse-dash')
 HOME_DIR = os.getcwd()
-CM_REPORT_BUY = f'{HOME_DIR}/databases/confusion_matrix_buy_signal.csv'
-CM_REPORT_SELL = f'{HOME_DIR}/databases/confusion_matrix_sell_signal.csv'
 sys.path.append(f'{HOME_DIR}/dataTransformations/')
 
 # assign constants
 LONG_TERM_SPREAD = 1.078
 NUMBER_OF_DAYS_AHEAD = 20
 
-class Confusion_matrix():
+class ConfusionMatrix():
 
     def so_output(value):
 
@@ -260,28 +259,28 @@ class Confusion_matrix():
 
         # Create a function to signal when to buy and sell an asset
         def buy_sell(signal):
-            Buy = []
-            Sell = []
+            buy_signal_list = []
+            sell_signal_list = []
             flag = -1
 
             for i in range(0, len(signal)):
                 if df.iloc[i]['MACD'] > df.iloc[i]['Signal Line']:
-                    Sell.append(np.nan)
+                    sell_signal_list.append(np.nan)
                     if flag != 1:
-                        Buy.append(signal.iloc[i]['<CLOSE>'])
+                        buy_signal_list.append(signal.iloc[i]['<CLOSE>'])
                         flag = 1
-                    else: Buy.append(np.nan)
+                    else: buy_signal_list.append(np.nan)
                 elif df.iloc[i]['MACD'] < df.iloc[i]['Signal Line']:
-                    Buy.append(np.nan)
+                    buy_signal_list.append(np.nan)
                     if flag != 0:
-                        Sell.append(signal.iloc[i]['<CLOSE>'])
+                        sell_signal_list.append(signal.iloc[i]['<CLOSE>'])
                         flag = 0
-                    else: Sell.append(np.nan)
+                    else: sell_signal_list.append(np.nan)
                 else:
-                    Buy.append(np.nan)
-                    Sell.append(np.nan)
+                    buy_signal_list.append(np.nan)
+                    sell_signal_list.append(np.nan)
 
-            return (Buy, Sell)
+            return (buy_signal_list, sell_signal_list)
 
         # Create buy and sell column
         a = buy_sell(df)
@@ -308,7 +307,7 @@ class Confusion_matrix():
 
         return macd_results
 
-    def confusion_matrix():
+    def confusionMatrix():
 
         '''
         Function to collect statistics based on the confusion matrix calculated depending on market indicators
@@ -388,10 +387,10 @@ class Confusion_matrix():
         for j in abbrev_list:
 
             df = pd.DataFrame(data=d) # reset initial dataframe
-            so_results = Confusion_matrix.so_output(j.lower()) # output abbreviations have capital letters,
+            so_results = ConfusionMatrix.so_output(j.lower()) # output abbreviations have capital letters,
                                                                # that's why .lower() is used
-            macd_results = Confusion_matrix.macd_output(j.lower())
-            rsi_rsults = Confusion_matrix.rsi_output(j.lower())
+            macd_results = ConfusionMatrix.macd_output(j.lower())
+            rsi_rsults = ConfusionMatrix.rsi_output(j.lower())
 
             # general rule: if signal for the indicator is positive, set +, if negative, set -
             for i in range(90):
@@ -566,7 +565,7 @@ class Confusion_matrix():
 
             print("Processed company (abbreviation): ", j) # print present company abbreviation to follow processing
 
-        def confusion_matrix(title,
+        def conf_matrix_stats(title,
                              TP_all, TP_BELOW_SPREAD_all, TN_all, FP_all, FN_all):
 
             # create empty lists to collect results
@@ -668,38 +667,193 @@ class Confusion_matrix():
                     f1_spread.append(0)
 
             # set the meaningful index for the dataframe
-            index = ['D+1', 'D+2', 'D+3', 'D+4', 'D+5', 'D+6', 'D+7', 'D+8', 'D+9', 'D+10',
-                     'D+11', 'D+12', 'D+13', 'D+14', 'D+15', 'D+16', 'D+17', 'D+18', 'D+19', 'D+20']
+            index = list(range(1,21))
 
             # create the dataframe to keep the results
-            df_macd = pd.DataFrame({'SENSITIVITY': sensitivity, 'SPECIFICITY': specificity, 'PRECISION': precision,
+            stats = pd.DataFrame({'SENSITIVITY': sensitivity, 'SPECIFICITY': specificity, 'PRECISION': precision,
                                     'NPV': npv, 'FNR': fnr, 'FPR': fpr, 'ACCURACY': acc, 'f1': f1, 'n': n,
                                     'SENSITIVITY_spread': sensitivity_spread, 'PRECISION_spread': precision_spread,
                                     'FNR_spread': fnr_spread, 'ACCURACY_spread': acc_spread, 'f1_spread': f1_spread,
                                     'n_spread': n_spread},
                                    index=index)
-            df_macd = df_macd.round(1)
-            df_macd = df_macd.transpose()
+            stats = stats.round(3)
+            stats = stats.transpose()
 
-            df_macd.to_csv(f'/Users/michalozieblo/Desktop/WSE-dashboard-01092020/wse-dash/databases/confusion_matrix_{title}.csv',
+            stats.to_csv(f'/Users/michalozieblo/Desktop/WSE-dashboard-01092020/wse-dash/databases/confusion_matrix_{title}.csv',
                            encoding='utf-8')
+            return stats
 
-        confusion_matrix('ALL_EXCL_MACD', TP_ABOVE_SPREAD_all_excl_MACD, TP_BELOW_SPREAD_all_excl_MACD,
-                         TN_all_excl_MACD, FP_all_excl_MACD, FN_all_excl_MACD)
-        confusion_matrix('ALL', TP_ABOVE_SPREAD_all, TP_BELOW_SPREAD_all, TN_all, FP_all, FN_all)
-        confusion_matrix('SO_FAST', TP_ABOVE_SPREAD_SOfast, TP_BELOW_SPREAD_SOfast, TN_SOfast, FP_SOfast, FN_SOfast)
-        confusion_matrix('SO_FAST_AND_MACD', TP_ABOVE_SPREAD_SOfast_excl_MACD, TP_BELOW_SPREAD_SOfast_excl_MACD,
-                         TN_SOfast_excl_MACD,
-                         FP_SOfast_excl_MACD, FN_SOfast_excl_MACD)
-        confusion_matrix('SO_SLOW', TP_ABOVE_SPREAD_SOslow, TP_BELOW_SPREAD_SOslow, TN_SOslow, FP_SOslow, FN_SOslow)
-        confusion_matrix('SO_SLOW_AND_MACD', TP_ABOVE_SPREAD_SOslow_excl_MACD, TP_BELOW_SPREAD_SOslow_excl_MACD,
-                         TN_SOslow_excl_MACD, FP_SOslow_excl_MACD, FN_SOslow_excl_MACD)
-        confusion_matrix('RSI', TP_ABOVE_SPREAD_RSI_excl_MACD, TP_BELOW_SPREAD_RSI_excl_MACD, TN_RSI_excl_MACD,
-                         FP_RSI_excl_MACD, FN_RSI_excl_MACD)
-        confusion_matrix('RSI_AND_MACD', TP_ABOVE_SPREAD_RSI, TP_BELOW_SPREAD_RSI, TN_RSI, FP_RSI, FN_RSI)
-        confusion_matrix('MACD', TP_ABOVE_SPREAD_MACD, TP_BELOW_SPREAD_MACD, TN_MACD, FP_MACD, FN_MACD)
+        df1 = conf_matrix_stats('ALL_EXCL_MACD',
+                                TP_ABOVE_SPREAD_all_excl_MACD,
+                                TP_BELOW_SPREAD_all_excl_MACD,
+                                TN_all_excl_MACD,
+                                FP_all_excl_MACD,
+                                FN_all_excl_MACD) # all-macd
+        df2 = conf_matrix_stats('ALL',
+                                TP_ABOVE_SPREAD_all,
+                                TP_BELOW_SPREAD_all,
+                                TN_all,
+                                FP_all,
+                                FN_all) # all
+        df3 = conf_matrix_stats('SO_FAST+MACD',
+                                TP_ABOVE_SPREAD_SOfast,
+                                TP_BELOW_SPREAD_SOfast,
+                                TN_SOfast,
+                                FP_SOfast,
+                                FN_SOfast) # fast+macd
+        df4 = conf_matrix_stats('SO_FAST',
+                                TP_ABOVE_SPREAD_SOfast_excl_MACD,
+                                TP_BELOW_SPREAD_SOfast_excl_MACD,
+                                TN_SOfast_excl_MACD,
+                                FP_SOfast_excl_MACD, FN_SOfast_excl_MACD) # fast
+        df5 = conf_matrix_stats('SO_SLOW+MACD',
+                                TP_ABOVE_SPREAD_SOslow,
+                                TP_BELOW_SPREAD_SOslow,
+                                TN_SOslow,
+                                FP_SOslow,
+                                FN_SOslow) #slow+macd
+        df6 = conf_matrix_stats('SO_SLOW',
+                                TP_ABOVE_SPREAD_SOslow_excl_MACD,
+                                TP_BELOW_SPREAD_SOslow_excl_MACD,
+                                TN_SOslow_excl_MACD,
+                                FP_SOslow_excl_MACD,
+                                FN_SOslow_excl_MACD) # slow
+        df7 = conf_matrix_stats('RSI',
+                                TP_ABOVE_SPREAD_RSI_excl_MACD,
+                                TP_BELOW_SPREAD_RSI_excl_MACD,
+                                TN_RSI_excl_MACD,
+                                FP_RSI_excl_MACD, FN_RSI_excl_MACD) # rsi
+        df8 = conf_matrix_stats('RSI+MACD',
+                                TP_ABOVE_SPREAD_RSI,
+                                TP_BELOW_SPREAD_RSI,
+                                TN_RSI,
+                                FP_RSI,
+                                FN_RSI) # rsi+macd
+        df9 = conf_matrix_stats('MACD',
+                                TP_ABOVE_SPREAD_MACD,
+                                TP_BELOW_SPREAD_MACD,
+                                TN_MACD,
+                                FP_MACD,
+                                FN_MACD) #macd
 
         print("Reports for Confusion Matrix are created.")
 
+        list_of_conf_matrix_stats = [df1, df4, df6,  df7,  df9]
+
+        # generation of plots with precision, NPV and F-score stats
+
+        xaxis = range(1,21)
+
+        precision_data = pd.DataFrame()
+        precision_data_spread = pd.DataFrame()
+        npv_data = pd.DataFrame()
+        fscore_data = pd.DataFrame()
+        fscore_data_spread = pd.DataFrame()
+        n = pd.DataFrame()
+        n_spread = pd.DataFrame()
+
+        for i, df in enumerate(list_of_conf_matrix_stats):
+
+            precision_data = precision_data.append(df.iloc[[2]], ignore_index = True)
+            npv_data = npv_data.append(df.iloc[[3]], ignore_index = True)
+            fscore_data = fscore_data.append(df.iloc[[7]], ignore_index = True)
+            precision_data_spread = precision_data_spread.append(df.iloc[[10]], ignore_index = True)
+            fscore_data_spread = fscore_data_spread.append(df.iloc[[13]], ignore_index = True)
+            n = n.append(df.iloc[[8]], ignore_index = True)
+            n_spread = n_spread.append(df.iloc[[14]], ignore_index = True)
+
+        index_row = ['ALL - MACD', 'SOfast', 'SOslow', 'RSI', 'MACD']
+
+        precision_data.index = index_row
+        npv_data.index = index_row
+        fscore_data.index = index_row
+        precision_data_spread.index = index_row
+        fscore_data_spread.index = index_row
+        n.index = index_row
+        n_spread.index = index_row
+
+        print(n[1])
+
+        print(n_spread)
+
+        precision_data.T.plot.line()
+        plt.title('PRECISION')
+        plt.xticks(xaxis)
+        plt.legend(bbox_to_anchor=(0, 1.1, 1, 0.2), loc="lower left",
+                   mode="expand", borderaxespad=0, ncol=3, fontsize=8)
+        plt.show()
+
+
+        precision_data_spread.T.plot.line()
+        plt.title('PRECISION ABOVE SPREAD')
+        plt.xticks(xaxis)
+        plt.legend(bbox_to_anchor=(0, 1.1, 1, 0.2), loc="lower left",
+                   mode="expand", borderaxespad=0, ncol=3, fontsize=8)
+        plt.show()
+
+        npv_data.T.plot.line()
+        plt.title('NPV')
+        plt.xticks(xaxis)
+        plt.legend(bbox_to_anchor=(0, 1.1, 1, 0.2), loc="lower left",
+                   mode="expand", borderaxespad=0, ncol=3, fontsize=8)
+
+        plt.show()
+
+        fscore_data.T.plot.line()
+        plt.title('F-SCORE')
+        plt.xticks(xaxis)
+        plt.legend(bbox_to_anchor=(0, 1.1, 1, 0.2), loc="lower left",
+                   mode="expand", borderaxespad=0, ncol=3, fontsize=8)
+
+        plt.show()
+
+        fscore_data_spread.T.plot.line()
+        plt.title('F-SCORE ABOVE SPREAD')
+        plt.xticks(xaxis)
+        plt.legend(bbox_to_anchor=(0, 1.1, 1, 0.2), loc="lower left",
+                   mode="expand", borderaxespad=0, ncol=3, fontsize=8)
+
+        plt.show()
+
+        n.T.plot.line()
+        plt.title('N')
+        plt.xticks(xaxis)
+        plt.show()
+
+        n_spread.T.plot.line()
+        plt.title('N SPREAD')
+        plt.xticks(xaxis)
+        plt.legend(bbox_to_anchor=(0, 1.1, 1, 0.2), loc="lower left",
+                   mode="expand", borderaxespad=0, ncol=3, fontsize=8)
+        plt.show()
+
+# https://github.com/pandas-dev/pandas/issues/35684
+
+
+
 if __name__ == '__main__':
-    Confusion_matrix.confusion_matrix()
+    ConfusionMatrix.confusionMatrix()
+
+
+# ALL - MACD       3376.0
+# ALL                36.0
+# SOfast            179.0
+# SOfast - MACD    7762.0
+# SOslow             80.0
+# SOslow - MACD    7454.0
+# RSI              5545.0
+# RSI - MACD        250.0
+# MACD             1638.0
+# Name: 1, dtype: float64
+#                    1       2       3       4   ...      17      18      19      20
+# ALL - MACD     2338.0  2370.0  2427.0  2515.0  ...  2870.0  2883.0  2899.0  2891.0
+# ALL              29.0    31.0    30.0    31.0  ...    30.0    29.0    27.0    30.0
+# SOfast          128.0   127.0   130.0   139.0  ...   148.0   154.0   149.0   152.0
+# SOfast - MACD  5617.0  5697.0  5796.0  5949.0  ...  6679.0  6718.0  6744.0  6739.0
+# SOslow           58.0    60.0    63.0    69.0  ...    67.0    66.0    66.0    67.0
+# SOslow - MACD  5450.0  5550.0  5633.0  5786.0  ...  6455.0  6474.0  6502.0  6497.0
+# RSI            3809.0  3891.0  3998.0  4127.0  ...  4716.0  4730.0  4747.0  4736.0
+# RSI - MACD      167.0   169.0   174.0   189.0  ...   210.0   207.0   210.0   215.0
+# MACD           1234.0  1244.0  1263.0  1321.0  ...  1465.0  1462.0  1475.0  1486.0
+#
+# [9 rows x 20 columns]
