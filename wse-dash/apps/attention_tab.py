@@ -7,10 +7,6 @@ from dataTransformations.dict_path import dict_path_data
 import dash_table
 import pandas as pd
 
-######################################################################################################################
-######################################################################################################################
-######################################################################################################################
-
 #### source paths for test due to visualization of worth attention companies ####
 path_1 = dict_path_data['buy_signal']
 path_2 = dict_path_data['sell_signal']
@@ -41,7 +37,6 @@ import os.path, time
 import os
 
 HOME_DIR = os.getcwd()
-
 
 # https://intellipaat.com/community/3770/how-to-get-file-creation-modification-date-times-in-python
 today = time.ctime(os.path.getmtime(f'{HOME_DIR}/databases/buy_signal.csv'))
