@@ -44,7 +44,7 @@ HOME_DIR = os.getcwd()
 
 
 # https://intellipaat.com/community/3770/how-to-get-file-creation-modification-date-times-in-python
-today = time.ctime(os.path.getmtime(f'{HOME_DIR}/wseStocks/data/daily/pl/wse stocks/11b.txt'))
+today = time.ctime(os.path.getmtime(f'{HOME_DIR}/databases/buy_signal.csv'))
 proc = "%"
 #### Layout ####
 navbar = Navbar()

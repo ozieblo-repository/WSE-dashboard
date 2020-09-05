@@ -2,7 +2,7 @@
 
 How to use it:
 1. Open the new terminal in wse-dash folder.
-2. Change the HOME_DIR path in the wsedfIntoDict.py file
+2. Change the HOME_DIR path in the wsedfIntoDict.py and attention_companies.py file
 3. Change the path to scrapper.py file in index.py.
 3. Run the index.py file by following command in the terminal: 
 python index.py
