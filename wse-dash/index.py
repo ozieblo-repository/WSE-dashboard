@@ -471,6 +471,8 @@ def SO_output(value,n,m,o,high_threshold,low_threshold):
 
 ##################################################### Bollinger Bands #####################################################
 
+# supports Bollinger Bands vizualizations
+
 @app.callback(
     [Output('bb-plot', 'figure'),
      Output('tableBB1', 'figure'),
@@ -499,10 +501,8 @@ def update_output(value, n, m):
 
     df['MA20'] = df['<CLOSE>'].rolling(window=window_length_bb).mean()
     df['20dSTD'] = df['<CLOSE>'].rolling(window=window_length_bb).std()
-    df['Upper_2'] = df['MA20'] + (df['20dSTD'] * standard_deviation)
-    df['Upper_1'] = df['MA20'] + df['20dSTD']
-    df['Lower_2'] = df['MA20'] - (df['20dSTD'] * standard_deviation)
-    df['Lower_1'] = df['MA20'] - df['20dSTD']
+    df['Upper'] = df['MA20'] + (df['20dSTD'] * standard_deviation)
+    df['Lower'] = df['MA20'] - (df['20dSTD'] * standard_deviation)
 
     # Create a function to signal when to buy and sell an asset
     def buy_sell(signal):
@@ -511,14 +511,14 @@ def update_output(value, n, m):
         flag = -1
 
         for i in range(0, len(signal)):
-            if signal['<CLOSE>'][i] > signal['Upper_2'][i]:
+            if signal['<CLOSE>'][i] > signal['Upper'][i]:
                 Sell.append(np.nan)
                 if flag != 1:
                     Buy.append(signal['<CLOSE>'][i])
                     flag = 1
                 else:
                     Buy.append(np.nan)
-            elif signal['<CLOSE>'][i] < signal['Lower_2'][i]:
+            elif signal['<CLOSE>'][i] < signal['Lower'][i]:
                 Buy.append(np.nan)
                 if flag != 0:
                     Sell.append(signal['<CLOSE>'][i])
@@ -548,20 +548,12 @@ def update_output(value, n, m):
                              name='MA20 Line'))
 
     fig.add_trace(go.Scatter(x=date_index[-90:-1],
-                             y=df[-90:-1]['Upper_2'],
+                             y=df[-90:-1]['Upper'],
                              name='Upper Line_2'))
 
     fig.add_trace(go.Scatter(x=date_index[-90:-1],
-                             y=df[-90:-1]['Lower_2'],
+                             y=df[-90:-1]['Lower'],
                              name="Lower Line_2"))
-
-    fig.add_trace(go.Scatter(x=date_index[-90:-1],
-                             y=df[-90:-1]['Upper_1'],
-                             name='Upper Line'))
-
-    fig.add_trace(go.Scatter(x=date_index[-90:-1],
-                             y=df[-90:-1]['Lower_1'],
-                             name="Lower Line"))
 
     fig.update_layout(height=800,
                       width=1200,
@@ -594,6 +586,8 @@ def update_output(value, n, m):
     fig3.update_layout(margin=dict(l=0, r=20, t=0, b=5),
                        height=170)
     return fig, fig2, fig3
+
+##################################################### MACD #####################################################
 
 # supports MACD vizualizations
 
