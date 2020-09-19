@@ -10,7 +10,7 @@ from dict_path import dict_path_data
 # Need database.cvs file, which is a return from databasecreator.py run
 
 # `path` - Path to .csv files with historical values for each company.
-path = '/Users/michalozieblo/Downloads/WSE-dashboard/wse-dash/wseStocks/data/daily/pl/wse stocks'
+path = '/Users/mateuszjeczarek/Documents/GitHub/WSE-demo/wse-dash/wseStocks/data/daily/pl/wse stocks'
 
 class Parameters:
 
@@ -97,7 +97,7 @@ class Parameters:
         start = timeit.default_timer()
 
         try:
-            database = pd.read_csv(os.path.join('/Users/michalozieblo/Downloads/WSE-dashboard/wse-dash/databases', r'database.csv'),
+            database = pd.read_csv(os.path.join('/Users/mateuszjeczarek/Documents/GitHub/WSE-demo/wse-dash/databases', r'database.csv'),
                                    delimiter=',',
                                    index_col=[0])  # proper set of the index is important
         except FileNotFoundError:
