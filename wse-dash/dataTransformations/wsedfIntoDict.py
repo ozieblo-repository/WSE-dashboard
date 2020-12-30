@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 # Please change this path below:
-HOME_DIR = os.chdir('/Users/michalozieblo/Desktop/WSE-demo/WSE-demo/wse-dash')
+HOME_DIR = os.chdir('/Users/mateuszjeczarek/Documents/GitHub/WSE-demo/wse-dash')
 HOME_DIR = os.getcwd()
 
 import sys

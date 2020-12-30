@@ -29,19 +29,24 @@ layout = html.Div([navbar,
                                                     html.H3("Overview"),
                                                     html.P(
                                                         """\
-                                                        The tool for stock traders eager to maintain a view of \
-                                                        the WSE market in order to recognize, analyze, and \
-                                                        respond to market changes using technical analysis \
-                                                        indicators and basic unsupervised clustering algorythm.
-                                                        """),
-                                                    html.H3("Main goal"),
-                                                    html.P(
-                                                        """\
-                                                        Identify trends in prices movement of equity securities  \
-                                                        using RSI, Stochastic Oscillator, MACD and Bollinger \
-                                                        Bands indicators and also an unsupervised K-mean \
-                                                        clustering to market sectors to create opportunities \
-                                                        for capital gains.
+                                                        The main goal was to develop the dashboard based on the Python 
+                                                        programming language including Dash framework. The project managed 
+                                                        to build the dashboard to create, analyze and optimize investments 
+                                                        on the Warsaw Stock Exchange market. The dashboard was created 
+                                                        as a tool for investors eager to maintain a view of the main Polish 
+                                                        stock market in order to recognize, analyze, and respond to market 
+                                                        changes based on technical analysis indicators and a basic unsupervised 
+                                                        clustering algorithm. The data on the basis of which the dashboard 
+                                                        is based is downloaded from the network using web scrapping method. 
+                                                        The application processes historical data based on technical analysis 
+                                                        indicators with standard setting to generate buy and sell signals 
+                                                        for the next trading day. Furthermore, the dashboard is intended 
+                                                        to interactively visualize results for the following indicators 
+                                                        of technical analysis: stochastic oscillator, relative strength 
+                                                        index, moving average convergence / divergence and Bollinger bands. 
+                                                        In order to increase the chance of a profit gain the classification 
+                                                        using k-means was used. The implemented application has shown good 
+                                                        potential in terms of functionality and flexibility.
                                                         """),
                                                     html.H3("How to use it?"),
                                                     html.Ol( [html.Li("Click the below button in order to download \

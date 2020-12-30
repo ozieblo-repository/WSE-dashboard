@@ -57,9 +57,7 @@ layout = html.Div([
              html.Br()],
             width={"size": 3, "offset": 3}),
 
-            dbc.Col([html.Br(),html.Div("The signal line is the average of the above-formed MACD line, usually an exponential \
-                                        mean of period 9 is used.",
-        style={'color':'blue', 'fontSize':11})], width={"size": 3, "offset": 0})]
+            dbc.Col([html.Br(),html.Div()], width={"size": 3, "offset": 0})]
         ),
 
          dbc.Row([dbc.Col(
